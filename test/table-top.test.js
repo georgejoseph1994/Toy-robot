@@ -1,15 +1,15 @@
 const expect = require("chai").expect;
-const Table = require("../src/table");
+const TableTop = require("../src/tableTop");
 
 describe("A valid table top", () => {
     it("Should be a square", () => {
-        let tableTop = { length: 5, width: 5 };
-        expect(tableTop.length).to.be.equal(tableTop.width);
+        let tableTop = new TableTop(5,5)
+        expect(tableTop.Measurements.length).to.be.equal(tableTop.Measurements.width);
     });
 
     it("Should have positive non zero measurements", () => {
-        let tableTop = { length: 5, width: 5 };
-        expect(tableTop.length).to.be.greaterThan(0);
-        // expect(tableTop.width).to.be.greaterThan(0);
+        let tableTop = new TableTop(5,5)
+        expect(tableTop.Measurements.length).to.be.greaterThan(0);
+        expect(tableTop.Measurements.width).to.be.greaterThan(0);
     });
 });
