@@ -1,6 +1,13 @@
 Toy Robot Simulator
 ===================
 
+##The assessment criteria for us is as follows:
+
+Knowledge of chosen development language – any language is fine, go with your strength
+Design and Architecture – OOP, Functional Programming or other
+Testing – TDD if you can, if not make sure you have good test coverage (Unit tests, Integration tests etc.)
+Documentation – A good README file, comments in the code etc.
+
 Description
 -----------
 
