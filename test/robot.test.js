@@ -129,6 +129,10 @@ describe("A toy robot", () => {
   });
   describe("if turning", () => {
     describe("LEFT", () => {
+      it("Should not make the turn if the robot is not yet placed in the table", () => {
+        robot.turnLeft();
+        expect(robot.position).to.be.deep.equal(null);
+      });
       it("Should face West if the current direction is North", () => {
         robot.placeOn(0, 0, DIRECTIONS.NORTH);
         robot.turnLeft();
@@ -167,6 +171,10 @@ describe("A toy robot", () => {
       });
     });
     describe("RIGHT", () => {
+      it("Should not make the turn if the robot is not yet placed in the table", () => {
+        robot.turnRight();
+        expect(robot.position).to.be.deep.equal(null);
+      });
       it("Should face East if the current direction is North", () => {
         robot.placeOn(0, 0, DIRECTIONS.NORTH);
         robot.turnRight();
@@ -202,6 +210,17 @@ describe("A toy robot", () => {
           y: 0,
           direction: DIRECTIONS.NORTH,
         });
+      });
+    });
+  });
+  describe("when reporting", () => {
+    it("Should not change the position of the robot ", () => {
+      robot.placeOn(0, 0, DIRECTIONS.WEST);
+      robot.report();
+      expect(robot.position).to.be.deep.equal({
+        x: 0,
+        y: 0,
+        direction: DIRECTIONS.WEST,
       });
     });
   });

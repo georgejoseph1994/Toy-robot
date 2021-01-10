@@ -3,6 +3,9 @@
  */
 class TableTop {
   constructor(length = 5, width = 5) {
+    if (length < 1 || width < 1) {
+      return false;
+    }
     this.length = length;
     this.width = width;
   }
