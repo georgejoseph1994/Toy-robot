@@ -1,4 +1,5 @@
 const DIRECTIONS = require("./directions");
+const turnData = require("./turnData");
 /**
  * Class representing the Robot Toy
  * Contains all the methods to manipulate the toys direction and possition.
@@ -54,6 +55,26 @@ module.exports = class robot {
       };
     }
     return this.position;
+  }
+
+  /**
+   * Turns the robot on the table to the left direction
+   */
+  turnLeft() {
+    if (this.position == null) {
+      return;
+    }
+    this.position.direction = turnData[this.position.direction].left;
+  }
+
+  /**
+   * Turns the robot on the table to the left direction
+   */
+  turnRight() {
+    if (this.position == null) {
+      return;
+    }
+    this.position.direction = turnData[this.position.direction].right;
   }
 
   report() {
