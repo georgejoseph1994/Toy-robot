@@ -56,6 +56,10 @@ module.exports = class robot {
     return this.position;
   }
 
+  report() {
+    console.log(this.position);
+  }
+
   /**
    *  Returns a boolean value signifying the safety of the toy
    *  in a given position.

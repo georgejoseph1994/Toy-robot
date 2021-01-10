@@ -25,7 +25,6 @@ let driver = function () {
 
     commandsArray.forEach((commandText) => {
       Parser.parse(robot, commandText.trim().toUpperCase());
-      console.log(robot.position);
     });
 
     // console.log(data);
