@@ -127,4 +127,82 @@ describe("A toy robot", () => {
       });
     });
   });
+  describe("if turning", () => {
+    describe("LEFT", () => {
+      it("Should face West if the current direction is North", () => {
+        robot.placeOn(0, 0, DIRECTIONS.NORTH);
+        robot.turnLeft();
+        expect(robot.position).to.be.deep.equal({
+          x: 0,
+          y: 0,
+          direction: DIRECTIONS.WEST,
+        });
+      });
+      it("Should face North if the current direction is East", () => {
+        robot.placeOn(0, 0, DIRECTIONS.EAST);
+        robot.turnLeft();
+        expect(robot.position).to.be.deep.equal({
+          x: 0,
+          y: 0,
+          direction: DIRECTIONS.NORTH,
+        });
+      });
+      it("Should face East if the current direction is South", () => {
+        robot.placeOn(0, 0, DIRECTIONS.SOUTH);
+        robot.turnLeft();
+        expect(robot.position).to.be.deep.equal({
+          x: 0,
+          y: 0,
+          direction: DIRECTIONS.EAST,
+        });
+      });
+      it("Should face South if the current direction is West", () => {
+        robot.placeOn(0, 0, DIRECTIONS.WEST);
+        robot.turnLeft();
+        expect(robot.position).to.be.deep.equal({
+          x: 0,
+          y: 0,
+          direction: DIRECTIONS.SOUTH,
+        });
+      });
+    });
+    describe("RIGHT", () => {
+      it("Should face East if the current direction is North", () => {
+        robot.placeOn(0, 0, DIRECTIONS.NORTH);
+        robot.turnRight();
+        expect(robot.position).to.be.deep.equal({
+          x: 0,
+          y: 0,
+          direction: DIRECTIONS.EAST,
+        });
+      });
+      it("Should face South if the current direction is East", () => {
+        robot.placeOn(0, 0, DIRECTIONS.EAST);
+        robot.turnRight();
+        expect(robot.position).to.be.deep.equal({
+          x: 0,
+          y: 0,
+          direction: DIRECTIONS.SOUTH,
+        });
+      });
+      it("Should face West if the current direction is South", () => {
+        robot.placeOn(0, 0, DIRECTIONS.SOUTH);
+        robot.turnRight();
+        expect(robot.position).to.be.deep.equal({
+          x: 0,
+          y: 0,
+          direction: DIRECTIONS.WEST,
+        });
+      });
+      it("Should face North if the current direction is West", () => {
+        robot.placeOn(0, 0, DIRECTIONS.WEST);
+        robot.turnRight();
+        expect(robot.position).to.be.deep.equal({
+          x: 0,
+          y: 0,
+          direction: DIRECTIONS.NORTH,
+        });
+      });
+    });
+  });
 });
