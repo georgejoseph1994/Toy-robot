@@ -22,9 +22,9 @@ describe("A toy robot", () => {
     let robot = new Robot();
     let tableTop = new TableTop(5, 5);
 
-    robot.placeOn(tableTop, -1, 3, "NORTH");
+    robot.placeOn(tableTop, 2, 3, "NORTH");
     expect(robot.position).to.be.deep.equal({
-      x: -1,
+      x: 2,
       y: 3,
       direction: "NORTH",
     });
