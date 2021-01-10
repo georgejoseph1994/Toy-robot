@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --recursive --exit",
+    "run": "node index.js",
+    "test": "mocha --recursive --exit || true",
     "coverage": "nyc --reporter=text npm run test"
   },
   "repository": {
@@ -28,7 +29,8 @@
   "homepage": "https://github.com/georgejoseph1994/Toy-robot#readme",
   "devDependencies": {
     "mocha": "^8.2.1",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.3"
   },
   "dependencies": {
     "chai": "^4.2.0"
