@@ -89,5 +89,42 @@ describe("A toy robot", () => {
         direction: DIRECTIONS.WEST,
       });
     });
+
+    it("Should not move south if the toy will fall off the table.", () => {
+      robot.placeOn(0, 0, DIRECTIONS.SOUTH);
+      robot.move();
+      expect(robot.position).to.be.deep.equal({
+        x: 0,
+        y: 0,
+        direction: DIRECTIONS.SOUTH,
+      });
+    });
+    it("Should not move north if the toy will fall off the table.", () => {
+      robot.placeOn(0, 4, DIRECTIONS.NORTH);
+      robot.move();
+      expect(robot.position).to.be.deep.equal({
+        x: 0,
+        y: 4,
+        direction: DIRECTIONS.NORTH,
+      });
+    });
+    it("Should not move east if the toy will fall off the table.", () => {
+      robot.placeOn(0, 4, DIRECTIONS.EAST);
+      robot.move();
+      expect(robot.position).to.be.deep.equal({
+        x: 0,
+        y: 4,
+        direction: DIRECTIONS.EAST,
+      });
+    });
+    it("Should not move west if the toy will fall off the table.", () => {
+      robot.placeOn(4, 4, DIRECTIONS.WEST);
+      robot.move();
+      expect(robot.position).to.be.deep.equal({
+        x: 4,
+        y: 4,
+        direction: DIRECTIONS.WEST,
+      });
+    });
   });
 });
