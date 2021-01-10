@@ -9,6 +9,7 @@ module.exports = class robot {
     this.tableTop = tableTop;
     this.position = null;
   }
+
   /**
    * place the robot on a table top in the specified x,y possition
    * and facing the given direction.
@@ -41,10 +42,10 @@ module.exports = class robot {
         futurePositionY -= 1;
         break;
       case DIRECTIONS.EAST:
-        futurePositionX -= 1;
+        futurePositionX += 1;
         break;
       case DIRECTIONS.WEST:
-        futurePositionX += 1;
+        futurePositionX -= 1;
         break;
     }
     if (this.isSafePossition(futurePositionX, futurePositionY)) {

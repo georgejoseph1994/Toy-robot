@@ -12,9 +12,12 @@ module.exports = class Parser {
 
     if (commandText == "MOVE") {
       robot.move();
-    }
-    if (commandText == "REPORT") {
+    } else if (commandText == "REPORT") {
       robot.report();
+    } else if (commandText == "LEFT") {
+      robot.turnLeft();
+    } else if (commandText == "RIGHT") {
+      robot.turnRight();
     } else if (splittedPlace) {
       let currentPosition = robot.placeOn(
         parseInt(splittedPlace[1]),

@@ -75,7 +75,7 @@ describe("A toy robot", () => {
       robot.placeOn(2, 3, DIRECTIONS.EAST);
       robot.move();
       expect(robot.position).to.be.deep.equal({
-        x: 1,
+        x: 3,
         y: 3,
         direction: DIRECTIONS.EAST,
       });
@@ -84,7 +84,7 @@ describe("A toy robot", () => {
       robot.placeOn(2, 3, DIRECTIONS.WEST);
       robot.move();
       expect(robot.position).to.be.deep.equal({
-        x: 3,
+        x: 1,
         y: 3,
         direction: DIRECTIONS.WEST,
       });
@@ -109,19 +109,19 @@ describe("A toy robot", () => {
       });
     });
     it("Should not move east if the toy will fall off the table.", () => {
-      robot.placeOn(0, 4, DIRECTIONS.EAST);
+      robot.placeOn(4, 4, DIRECTIONS.EAST);
       robot.move();
       expect(robot.position).to.be.deep.equal({
-        x: 0,
+        x: 4,
         y: 4,
         direction: DIRECTIONS.EAST,
       });
     });
     it("Should not move west if the toy will fall off the table.", () => {
-      robot.placeOn(4, 4, DIRECTIONS.WEST);
+      robot.placeOn(0, 4, DIRECTIONS.WEST);
       robot.move();
       expect(robot.position).to.be.deep.equal({
-        x: 4,
+        x: 0,
         y: 4,
         direction: DIRECTIONS.WEST,
       });
