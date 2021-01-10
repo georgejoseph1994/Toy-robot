@@ -8,4 +8,4 @@ const DIRECTIONS = {
   WEST: "WEST",
 };
 
-module.exports = DIRECTIONS;
+module.exports = Object.freeze(DIRECTIONS);

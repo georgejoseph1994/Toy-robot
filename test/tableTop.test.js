@@ -23,6 +23,6 @@ describe("A valid table top", () => {
 
   it("Should not have zero or negative measurements", () => {
     let tableTop = new TableTop(-1, 0);
-    expect(tableTop).to.be.deep.equal({});
+    expect(tableTop.invalid).to.be.true;
   });
 });

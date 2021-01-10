@@ -34,6 +34,7 @@ module.exports = class robot {
     }
     let futurePositionX = this.position.x;
     let futurePositionY = this.position.y;
+
     switch (this.position.direction) {
       case DIRECTIONS.NORTH:
         futurePositionY += 1;
@@ -48,6 +49,7 @@ module.exports = class robot {
         futurePositionX -= 1;
         break;
     }
+
     if (this.isSafePossition(futurePositionX, futurePositionY)) {
       this.position = {
         x: futurePositionX,
@@ -59,7 +61,8 @@ module.exports = class robot {
   }
 
   /**
-   * Turns the robot on the table to the left direction
+   * Turns the robot on the table to the left direction.
+   * Works only if the robot is placed on the table.
    */
   turnLeft() {
     if (this.position == null) {
@@ -69,7 +72,8 @@ module.exports = class robot {
   }
 
   /**
-   * Turns the robot on the table to the left direction
+   * Turns the robot on the table to the left direction.
+   * Works only if the robot is placed on the table.
    */
   turnRight() {
     if (this.position == null) {
@@ -78,13 +82,17 @@ module.exports = class robot {
     this.position.direction = turnData[this.position.direction].right;
   }
 
+  /**
+   * Prints the robots current position on the console.
+   */
   report() {
-    console.log(this.position);
+    console.log(`X: ${this.position.x}, Y: ${this.position.y}`);
+    console.log(`Direction: ${this.position.direction} `);
   }
 
   /**
-   *  Returns a boolean value signifying the safety of the toy
-   *  in a given position.
+   * Returns a boolean value signifying the safety of the toy
+   * in a given position.
    */
   isSafePossition(x, y) {
     if (
