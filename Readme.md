@@ -41,7 +41,7 @@ node index.js
 npm test
 ```
 
-### Checking Test Coveage
+### Checking Test Coveage (100% coverage)
 
 ```
 npm run coverage

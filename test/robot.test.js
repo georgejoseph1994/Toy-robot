@@ -223,5 +223,9 @@ describe("A toy robot", () => {
         direction: DIRECTIONS.WEST,
       });
     });
+    it("Should not report if the toy is not placed yet ", () => {
+      robot.report();
+      expect(robot.position).to.be.deep.equal(null);
+    });
   });
 });
