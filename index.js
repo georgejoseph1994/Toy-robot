@@ -8,7 +8,7 @@ const Parser = require("./src/parser");
 const Robot = require("./src/robot");
 
 const FILE_PATH = CONFIG.filePath;
-const debug = false;
+const debug = CONFIG.debug;
 const tableTop = new TableTop(CONFIG.tableLength, CONFIG.tableWidth);
 let robot = new Robot(tableTop);
 /**
