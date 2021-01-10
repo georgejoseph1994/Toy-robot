@@ -86,6 +86,9 @@ module.exports = class robot {
    * Prints the robots current position on the console.
    */
   report() {
+    if (this.position == null) {
+      return;
+    }
     console.log(`X: ${this.position.x}, Y: ${this.position.y}`);
     console.log(`Direction: ${this.position.direction} `);
   }
